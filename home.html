@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Notes</h1>
+            <h3 style="margin: 10px;"><i>Add your notes here</i></h3>
+        </div>
+        <div class="top">
+            <form method="POST" action="/">
+                <input type="text" name="note" placeholder="Enter a note">
+                <input type="hidden" name="action" value="add">
+                <button type="submit">Add Note</button>
+            </form>
+        </div>
+        <div class="todo">
+            {% for index, note in notes %}
+            <div class="text">
+                <h3>{{ note }}</h3>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
